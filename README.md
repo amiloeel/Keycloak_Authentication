@@ -1,14 +1,3 @@
-# Projeto RHSSO / Keycloak
-
-#### Informações utéis keycloak
-
-- [Site keycloak](https://www.keycloak.org/getting-started)
-- [keycloak com OpenJDK](https://www.keycloak.org/getting-started/getting-started-zip)
-- [keycloak com Docker](https://www.keycloak.org/getting-started/getting-started-docker)
-- [Documentação Keycloak](https://www.keycloak.org/documentation)
-
-----------------------------------
-
 ## Preparação:
 
 Para realizar a operação de login através do Keycloak é necessário primeiro editar seu arquivo hosts:
