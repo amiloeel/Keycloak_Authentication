@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+	<head>
+		<meta charset="utf-8">
+		<title>EDS - Logado</title>
+		<link rel="stylesheet" href="../../_css/estilo.css">
+	</head>
+
+	<body>
+        <style>
+			*{
+				margin:  0;
+				padding: 0;
+			}
+
+			.containerlog{
+			margin: auto;
+			margin-top: 50px;
+			padding: 30px;
+			width:500px;
+			float: center;
+			height: auto;
+			}
+
+			nav.navega{
+			margin-top: 60px;
+			width: 500px;
+			height: auto;
+			background-color: #444;
+			float: center;
+			box-sizing: border-box;
+			padding: 10px;     
+			}
+
+			h2{
+			margin-top: 20px;
+			margin-bottom: 20px;
+			text-align: center;
+			color: rgb(219, 219, 219);
+			font-size: 25px;
+			}
+
+			nav{
+			width: 300px;
+			height: auto;
+			background-color: #444;
+			float: left;
+			box-sizing: border-box;
+			padding: 10px;                                                                                                       
+			}	
+
+			body{
+			background-color: #222;
+			font-family: Verdana;
+			font-size: 92%;
+			height: auto;
+			}
+
+			.campo2{
+			width: 150px;
+			height: 29px;
+			border: none;	
+			font-size: 15px;
+			text-align: center;
+			margin-left: 5px;
+			}
+
+			.btnx{
+			width: 300px;
+			border-style: none;
+			height: 30px;
+			background-color: #490000;
+			color: #fff;
+			}
+
+			.btny{
+			width: 150px;
+			border-style: none;
+			height: 50px;
+			background-color: #490000;
+			color: #fff;
+			cursor: pointer;
+			}
+
+			.btnkill{
+			width: 280px;
+			border-style: none;
+			height: 48px;
+			background-color: black;
+			color: #fff;
+			cursor: none;
+			}
+
+		</style>
+		<script>
+			function addZero(i) {
+				if (i < 10) {i = "0" + i}
+				return i;
+			}
+
+			function acessoEm(){
+				const monthNames = ["Janeiro", "Favereiro", "Março", "Abril", "Maio", "Junho",
+				"Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+				const dateObj = new Date();
+				const month = monthNames[dateObj.getMonth()];
+				const day = String(dateObj.getDate()).padStart(2, '0');
+				const year = dateObj.getFullYear();	
+				const d = dateObj;
+				let h = addZero(d.getHours());
+				let m = addZero(d.getMinutes());
+				let s = addZero(d.getSeconds());
+				let time = h + ":" + m + ":" + s;
+				const output = day  + ' de '+ month  + ' de ' + year + ' às ' + time;
+				return output;
+			}
+	</script>
+
+		<div class="containerlog" style="margin: auto;width:500px;margin-top: 50px;float:center;height: auto">
+			<nav class="navega" style="width: 500px;height: auto;background-color: #444;float: center;box-sizing: border-box">
+				<h2  style="font-size:25px;color:black">KEYCLOAK / RHSSO</h2>
+				<h2  style="font-size:22px">Seja bem vind@ !</h2> 					
+				<br>
+				<div class = "nueva" align="center">
+					<input type="button" value="Acesso concedido ao sistema em" class="btnx" style="background-color:#490000;" blocked>
+						<br>
+					<input type="button" id="xxbtn" class="btnx" style="background-color:#490000;" blocked>
+						<script>	
+							document.getElementById("xxbtn").value = acessoEm();
+						</script>
+						<br><br><br>
+					<a href="http://keycloak:8080/auth/realms/master/protocol/openid-connect/logout?redirect_uri=http://localhost:8066">
+						<input type="button" value="Sair do Sistema" class="btnx" style="background-color:black;width:150px"  blocked>
+					</a>	
+						<br><br>
+				</div>
+			</nav>
+		</div>
+	</body>
+	
+</html>

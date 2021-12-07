@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+  keycloak:
+    container_name: "keycloak"
+    image: jboss/keycloak
+    volumes:
+    - ./imports:/opt/jboss/keycloak/imports
+    - ./keycloak-15.0.2/themes/custom:/opt/jboss/keycloak/themes/custom
+    command: 
+    - "-Dkeycloak.migration.action=import"
+    - "-Dkeycloak.migration.provider=singleFile"
+    - "-Dkeycloak.migration.file=/opt/jboss/keycloak/imports/the-premium.json"
+    - "-Dkeycloak.migration.strategy=OVERWRITE_EXISTING"
+    - "-Dkeycloak.profile.feature.upload_scripts=enabled"
+    environment:
+    - KEYCLOAK_USER=admin
+    - KEYCLOAK_PASSWORD=admin
+    ports:
+    - 8080:8080
+    
+  logger:
+    container_name: "logger"
+    image: amiloeel/newlogger
+    ports:
+    - 8066:8066
+
+  applogger:
+    container_name: "applogger"
+    image: amiloeel/newapplogger
+    ports:
+    - 8090:8090

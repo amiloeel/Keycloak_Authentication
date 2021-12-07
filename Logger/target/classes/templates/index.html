@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="pt-br">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Treinamento EDS</title>	
+	</head>
+
+	<body>
+		<style>
+			*{
+				margin:  0;
+				padding: 0;
+			}
+
+			.containerlog{
+			margin: auto;
+			margin-top: 50px;
+			padding: 30px;
+			width:500px;
+			float: center;
+			height: auto;
+			}
+
+			nav.navega{
+			margin-top: 60px;
+			width: 500px;
+			height: auto;
+			background-color: #444;
+			float: center;
+			box-sizing: border-box;
+			padding: 10px;     
+			}
+
+			h2{
+			margin-top: 20px;
+			margin-bottom: 20px;
+			text-align: center;
+			color: rgb(219, 219, 219);
+			font-size: 25px;
+			}
+
+			nav{
+			width: 300px;
+			height: auto;
+			background-color: #444;
+			float: left;
+			box-sizing: border-box;
+			padding: 10px;                                                                                                       
+			}	
+
+			body{
+			background-color: #222;
+			font-family: Verdana;
+			font-size: 92%;
+			height: auto;
+			}
+
+			.campo2{
+			width: 150px;
+			height: 29px;
+			border: none;	
+			font-size: 15px;
+			text-align: center;
+			margin-left: 5px;
+			}
+
+			.btnx{
+			width: 100px;
+			border-style: none;
+			height: 30px;
+			background-color: #490000;
+			color: #fff;
+			}
+
+			.btny{
+			width: 150px;
+			border-style: none;
+			height: 50px;
+			background-color: #490000;
+			color: #fff;
+			cursor: pointer;
+			}
+
+			.btnkill{
+			width: 280px;
+			border-style: none;
+			height: 48px;
+			background-color: black;
+			color: #fff;
+			cursor: none;
+			}
+
+		</style>
+		<div class="containerlog">
+			<nav class="navega">
+				<br>	
+				<h2>
+					KEYCLOAK / RHSSO
+				</h2>
+                <h2 style="font-size: 20px;">
+					Aplicativo Springboot
+				</h2>
+				<br>
+				<div align="center">
+							<a href="/private">
+								<button type="submit" class="btny">Acessar com Keycloak</button>
+								<br><br>
+                            </a>
+							<!--<div th:if="${param.error}" class="alert alert-error">
+								<input type="button" value="LOGIN OU SENHA INCORRETOS" class="btnkill">
+								<br><br>
+							</div>
+							<div th:if="${param.logout}" class="alert alert-success">
+								saiusse
+							</div>-->
+				</div>
+			</nav>
+		</div>
+	</body>
+
+</html>
